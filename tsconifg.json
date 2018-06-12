@@ -1,0 +1,10 @@
+{
+    "compilerOptions": "es5",
+    "module": "commomjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false
+}
