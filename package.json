@@ -1,0 +1,44 @@
+{
+  "name": "angular2-quickstart",
+  "version": "1.0.0",
+  "description": "Quickstart in Angular 2",
+  "main": "index.js",
+  "dependencies": {
+    "@angular/common": "~6.0.4",
+    "@angular/compiler": "~6.0.4",
+    "@angular/core": "~6.0.4",
+    "@angular/forms": "~6.0.4",
+    "@angular/http": "~6.0.4",
+    "@angular/platform-browser": "~6.0.4",
+    "@angular/platform-browser-dynamic": "~6.0.4",
+    "@angular/router": "~6.0.4",
+    "@angular/upgrade": "~6.0.4",
+    "angular-in-memory-web-api": "~0.1.13",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.39",
+    "zone.js": "^0.6.25"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.46",
+    "@types/node": "^6.0.45",
+    "concurrently": "^3.0.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.3"
+  },
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagotds/angular2-quickstart.git"
+  },
+  "author": "Tiago Donizete dos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagotds/angular2-quickstart/issues"
+  },
+  "homepage": "https://github.com/tiagotds/angular2-quickstart#readme"
+}
