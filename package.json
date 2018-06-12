@@ -2,7 +2,6 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "description": "Quickstart in Angular 2",
-  "main": "index.js",
   "dependencies": {
     "@angular/common": "~6.0.4",
     "@angular/compiler": "~6.0.4",
@@ -28,7 +27,10 @@
     "typescript": "^2.0.3"
   },
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
