@@ -1,5 +1,5 @@
 {
-    "compilerOptions": "es6",
+    "compilerOptions": "es5",
     "module": "commomjs",
     "moduleResolution": "node",
     "sourceMap": true,
