@@ -13,7 +13,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h3>Minha primeira aplica\u00E7\u00E3o Angular 2.0 no VS Code </h3><br>Macoratti .net\n        <div class=\"alert alert-success\" role=\"alert\">\n          <strong>Minha primeira aplica\u00E7\u00E3o Angular 2.0  no VS Code - </strong>Macoratti .net.\n        </div>\n    "
+            template: "\n        <h1>My First Angular 2 App</h1>\n       <contatos-lista></contatos-lista>\n    "
         })
     ], AppComponent);
     return AppComponent;
