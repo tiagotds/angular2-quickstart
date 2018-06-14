@@ -7,25 +7,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var contatos_module_1 = require("./contatos/contatos.module");
-var app_routing_module_1 = require("./app-routing.module");
-var AppModule = /** @class */ (function () {
-    function AppModule() {
+var router_1 = require("@angular/router");
+var appRoutes = [
+    {
+        path: '',
+        redirectTo: '/contato',
+        pathMatch: 'full'
     }
-    AppModule = __decorate([
+];
+var AppRoutingModule = /** @class */ (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = __decorate([
         core_1.NgModule({
             imports: [
-                app_routing_module_1.AppRoutingModule,
-                platform_browser_1.BrowserModule,
-                contatos_module_1.ContatosModule
+                router_1.RouterModule.forRoot(appRoutes)
             ],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            exports: [
+                router_1.RouterModule
+            ]
         })
-    ], AppModule);
-    return AppModule;
+    ], AppRoutingModule);
+    return AppRoutingModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=app-routing.module.js.map

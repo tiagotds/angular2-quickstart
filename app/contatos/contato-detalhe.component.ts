@@ -1,7 +1,7 @@
-import Component from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    module: module.id,
+    moduleId: module.id,
     selector: 'contato-detalhe',
     templateUrl: 'contato-detalhe.component.html'
 })

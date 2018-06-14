@@ -12,8 +12,9 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            template: "\n        <h1>My First Angular 2 App</h1>\n       <contatos-lista></contatos-lista>\n    "
+            templateUrl: 'app.component.html'
         })
     ], AppComponent);
     return AppComponent;

@@ -11,8 +11,8 @@ var ContatoDetalheComponent = /** @class */ (function () {
     function ContatoDetalheComponent() {
     }
     ContatoDetalheComponent = __decorate([
-        core_1.default({
-            module: module.id,
+        core_1.Component({
+            moduleId: module.id,
             selector: 'contato-detalhe',
             templateUrl: 'contato-detalhe.component.html'
         })
