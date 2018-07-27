@@ -5,21 +5,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var contatos_mock_1 = require("./contatos-mock");
-var ContatosListaComponent = /** @class */ (function () {
-    function ContatosListaComponent() {
-        this.contatos = contatos_mock_1.CONTATOS;
+const core_1 = require("@angular/core");
+const contato_service_1 = require("./contato.service");
+let ContatosListaComponent = class ContatosListaComponent {
+    constructor(contatoService) {
+        this.contatoService = contatoService;
     }
-    ContatosListaComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'contatos-lista',
-            templateUrl: 'contatos-lista.component.html'
+    ngOnInit() {
+        this.contatoService.getContatos()
+            .then((contatos) => {
+            this.contatos = contatos;
         })
-    ], ContatosListaComponent);
-    return ContatosListaComponent;
-}());
+            .catch(err => console.log(err));
+    }
+};
+ContatosListaComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'contatos-lista',
+        templateUrl: 'contatos-lista.component.html'
+    }),
+    __metadata("design:paramtypes", [contato_service_1.ContatoService])
+], ContatosListaComponent);
 exports.ContatosListaComponent = ContatosListaComponent;
 //# sourceMappingURL=contatos-lista.component.js.map
