@@ -7,8 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const contatos_lista_component_1 = require("./contatos-lista.component");
 const common_1 = require("@angular/common");
+const forms_1 = require("@angular/forms");
+const contatos_lista_component_1 = require("./contatos-lista.component");
 const contato_routing_module_1 = require("./contato-routing.module");
 const contato_detalhe_component_1 = require("./contato-detalhe.component");
 const contato_service_1 = require("./contato.service");
@@ -18,7 +19,8 @@ ContatosModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            contato_routing_module_1.ContatoRoutingModule
+            contato_routing_module_1.ContatoRoutingModule,
+            forms_1.FormsModule
         ],
         declarations: [
             contato_detalhe_component_1.ContatoDetalheComponent,
