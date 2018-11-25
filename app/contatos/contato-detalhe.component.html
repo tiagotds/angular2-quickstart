@@ -1,10 +1,10 @@
 <div class="container">
     <h2>Salvar contato</h2>
 
-    <form>
+    <form #contatoForm="ngForm">
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" placeholder="Insira o nome" [ngModel]="contato.nome" name="nome" (ngModelChange)="contato.nome = $event">
+            <input type="text" class="form-control" placeholder="Insira o nome" required [ngModel]="contato.nome" name="nome" (ngModelChange)="contato.nome = $event">
             <!--
                 one-way data biding
                 <input type="text" class="form-control" placeholder="Insira o nome" value="{{ contato.nome }}">
@@ -13,7 +13,7 @@
         
         <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" class="form-control" placeholder="Insira o e-mail" [(ngModel)]="contato.email" name="email">
+            <input type="email" class="form-control" placeholder="Insira o e-mail" required [(ngModel)]="contato.email" name="email">
             <!--
                 one-way data biding<input type="email" class="form-control" placeholder="Insira o e-mail" [value]="contato.email">
             -->
@@ -21,13 +21,13 @@
 
         <div class="form-group">
             <label for="telefone">telefone</label>
-            <input type="text" class="form-control" placeholder="Insira o telefone" [(ngModel)]="contato.telefone" name="telefone">
+            <input type="text" class="form-control" placeholder="Insira o telefone" required [(ngModel)]="contato.telefone" name="telefone">
         </div>
 
-        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="submit" class="btn btn-success" [disabled]="!contatoForm.form.valid">Salvar</button>
         <a class="btn btn-secondary" routerLink="/">Voltar</a>
 
     </form>
 
-    <button (click)="teste()" class="btn btn-warning">Log</button>
+    <button (click)="teste(contatoForm)" class="btn btn-warning">Log</button>
 </div>

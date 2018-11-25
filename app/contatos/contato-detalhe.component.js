@@ -25,21 +25,26 @@ let ContatoDetalheComponent = class ContatoDetalheComponent {
         this.route.params.forEach((params) => {
             let id = +params['id'];
             console.log(id);
-            this.contatoService.getContato(id)
-                .then((contato) => {
-                this.contato = contato;
-            });
+            if (id) {
+                this.contatoService.getContato(id)
+                    .then((contato) => {
+                    this.contato = contato;
+                });
+            }
         });
     }
-    teste() {
-        console.log(this.contato);
+    teste(form) {
+        console.log(form);
     }
 };
 ContatoDetalheComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'contato-detalhe',
-        templateUrl: 'contato-detalhe.component.html'
+        templateUrl: 'contato-detalhe.component.html',
+        styleUrls: [
+            'contato-detalhe.component.css'
+        ]
     }),
     __metadata("design:paramtypes", [contato_service_1.ContatoService,
         router_1.ActivatedRoute,
