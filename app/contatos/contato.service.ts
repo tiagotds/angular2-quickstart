@@ -1,5 +1,8 @@
 
 import { Injectable, resolveForwardRef } from '@angular/core';
+import { HttpModule, Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
 
 import { Contato } from './contato.model';
 import { CONTATOS } from './contatos-mock';
@@ -7,13 +10,21 @@ import { CONTATOS } from './contatos-mock';
 @Injectable()
 export class ContatoService {
 
+    private apiUrl: string = "app/contatos";
+
+    constructor(
+        private http: Http
+    ){}
+
     getContatos(): Promise<Contato[]> {
-        return Promise.resolve(CONTATOS);
+        return this.http.get(this.apiUrl).toPromise()
+            .then(response => response.json().data as Contato[]);
+        //return Promise.resolve(CONTATOS);
     }
 
     getContato(id: number): Promise<Contato> {
         return this.getContatos()
-            .then((contatos: Contato[]) => contatos.find(contato => contato.id === id);
+            .then((contatos: Contato[]) => contatos.find(contato => contato.id === id)
             );
     }
 

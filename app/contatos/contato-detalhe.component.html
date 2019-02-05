@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Salvar contato</h2>
 
-    <form #contatoForm="ngForm" novalidate>
+    <form (ngSubmit)="onSubmit()" #contatoForm="ngForm" novalidate>
         <div class="form-group" [ngClass]="getFormGroupClass(nome.valid, nome.pristine)">
             <label for="nome" class="form-control-label">Nome</label>
             <input type="text" class="form-control" placeholder="Insira o nome" 
@@ -32,6 +32,4 @@
         <a class="btn btn-secondary" routerLink="/">Voltar</a>
 
     </form>
-
-    <button (click)="teste(contatoForm)" class="btn btn-warning">Log</button>
 </div>
